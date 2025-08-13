@@ -1,2 +1,59 @@
+let tasks = [];
+let nextId = 1;
 
-console.log(process.argv[2]);
+function createTask(taskName) {
+    const task = {
+        id: nextId++,
+        taskName: taskName
+    };
+    tasks.push(task);
+    console.log(`Task created: [${task.id}] ${task.taskName}`);
+}
+
+function readTasks() {
+    if (tasks.length === 0) {
+        console.log("No tasks available.");
+    } else {
+        console.log("Current Tasks List:");
+        tasks.forEach(task => {
+            console.log(`[${task.id}] ${task.taskName}`);
+        });
+    }
+}
+
+
+function updateTask(taskName) {
+    const task = {
+        id: nextId++,
+        taskName: taskName
+    };
+    tasks.push(task);
+    console.log(`Task created: [${task.id}] ${task.taskName}`);
+}
+
+
+function deleteTask(taskName) {
+    const task = {
+        id: nextId++,
+        taskName: taskName
+    };
+    tasks.push(task);
+    console.log(`Task created: [${task.id}] ${task.taskName}`);
+}
+
+
+const action = process.argv[2];
+const taskName = process.argv[3];
+
+if (action === "create") {
+    if (!taskName) {
+        console.log("No tasks has been added");
+    } else {
+        createTask(taskName);
+        readTasks();
+    }
+} else if (action === "read") {
+    readTasks();
+} else {
+    console.log("Try again");
+}

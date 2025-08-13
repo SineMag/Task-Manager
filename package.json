@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/SineMag/Task-Manager/issues"
   },
-  "homepage": "https://github.com/SineMag/Task-Manager#readme"
+  "homepage": "https://github.com/SineMag/Task-Manager#readme",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
 }
